@@ -12,7 +12,7 @@ class TodoItem < ApplicationRecord
 
     Turbo::StreamsChannel.broadcast_replace_to(
       "todo_list_#{todo_list.id}",
-      target: "todo_list_#{todo_list.id}",
+      target: "todo_item_#{id}",
       partial: "todo_items/todo_item",
       locals: { todo_item: self }
     )

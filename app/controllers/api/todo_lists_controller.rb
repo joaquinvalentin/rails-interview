@@ -1,7 +1,6 @@
 module Api
   class TodoListsController < ApplicationController
-    protect_from_forgery with: :null_session
-    before_action :set_todo_list, only: %i[update destroy]
+    before_action :set_todo_list, only: %i[show update destroy]
 
     # GET /api/todolists
     def index
@@ -10,18 +9,27 @@ module Api
       respond_to :json
     end
 
+    # GET /api/todolists/:id
+    def show
+      respond_to :json
+    end
+
     # POST /api/todolists
     def create
       @todo_list = TodoList.create(todolist_params)
 
-      respond_to :json
+      respond_to do |format|
+        format.json { render "api/todo_lists/show" }
+      end
     end
 
     # PUT /api/todolists/:id
     def update
       @todo_list.update(todolist_params)
 
-      respond_to :json
+      respond_to do |format|
+        format.json { render "api/todo_lists/show" }
+      end
     end
 
     # DELETE /api/todolists/:id

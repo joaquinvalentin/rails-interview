@@ -1,0 +1,13 @@
+
+<div id="todo_item_<%= todo_item.id %>" class="flex relative items-center w-full gap-2 p-2 border-b border-gray-200">
+
+  <div class="absolute bottom-2 left-0 flex">
+    <% unless todo_item.completed %>
+      <%= form_with model: todo_item, url: complete_todo_list_todo_item_path(todo_item.todo_list, todo_item), method: :put do |f| %>
+        <%= f.button "Complete", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <p class="flex-1 <%= 'line-through text-gray' if todo_item.completed %>"><%= todo_item.title %></p>
+</div>

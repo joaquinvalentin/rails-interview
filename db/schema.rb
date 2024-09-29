@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_18_201128) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_29_203029) do
   create_table "todo_items", force: :cascade do |t|
     t.string "title"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.integer "todo_list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery unless: -> { request.format.json? }
   rescue_from ActionController::UnknownFormat, with: :raise_not_found
 
   def raise_not_found

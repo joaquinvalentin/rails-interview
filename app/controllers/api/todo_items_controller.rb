@@ -1,6 +1,5 @@
 module Api
   class TodoItemsController < ApplicationController
-    protect_from_forgery with: :null_session
     before_action :set_todo_item, only: %i[update destroy complete]
 
     # GET /api/todoitems

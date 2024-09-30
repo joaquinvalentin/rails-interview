@@ -1,19 +1,16 @@
 AllCops:
-  NewCops: enable
+  SuggestExtensions: false
   Exclude:
     - db/schema.rb
     - db/migrate/*
-    - bin/*
-    - config/**/*/
+    - bin/**/*
+    - config/**/*
 
 Documentation:
   Enabled: false
 
 LineLength:
   Max: 100
-
-Rails/EnvironmentVariableAccess:
-  Enabled: false
 
 FrozenStringLiteralComment:
   Enabled: false
@@ -23,15 +20,6 @@ Metrics/BlockLength:
     - config/initializers/*.rb
 
 Style/EachWithObject:
-  Enabled: false
-
-RSpec/NestedGroups:
-  Max: 5
-
-RSpec/Focus:
-  Enabled: false
-
-RSpec/AnyInstance:
   Enabled: false
 
 Lint/DuplicateBranch:
@@ -46,14 +34,6 @@ Metrics/PerceivedComplexity:
 Naming/AccessorMethodName:
   Enabled: false
 
-Rails/OutputSafety:
-  Enabled: false
-
-Rails/UnknownEnv:
-  Enabled: false
-
 Style/WordArray:
   Enabled: false
 
-RSpec/MultipleMemoizedHelpers:
-  Enabled: false

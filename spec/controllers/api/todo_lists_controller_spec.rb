@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Api::TodoListsController do
+describe Api::TodoListsController do # rubocop:disable Metrics/BlockLength
   render_views
 
   describe 'GET #index' do

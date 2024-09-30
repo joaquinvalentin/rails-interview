@@ -14,7 +14,7 @@ module Api
       @todo_item = TodoItem.create(todoitem_params)
 
       respond_to do |format|
-        format.json { render "api/todo_items/show" }
+        format.json { render 'api/todo_items/show' }
       end
     end
 
@@ -23,14 +23,11 @@ module Api
       @todo_item.update(completed: true)
 
       respond_to do |format|
-        format.json { render "api/todo_items/show" }
+        format.json { render 'api/todo_items/show' }
       end
     end
 
-    def batch_complete
-      #
-      
-    end
+    def batch_complete; end
 
     # PUT /api/todoitems/:id
     def destroy

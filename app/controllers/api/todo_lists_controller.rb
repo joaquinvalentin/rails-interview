@@ -19,7 +19,7 @@ module Api
       @todo_list = TodoList.create(todolist_params)
 
       respond_to do |format|
-        format.json { render "api/todo_lists/show" }
+        format.json { render 'api/todo_lists/show' }
       end
     end
 
@@ -28,7 +28,7 @@ module Api
       @todo_list.update(todolist_params)
 
       respond_to do |format|
-        format.json { render "api/todo_lists/show" }
+        format.json { render 'api/todo_lists/show' }
       end
     end
 

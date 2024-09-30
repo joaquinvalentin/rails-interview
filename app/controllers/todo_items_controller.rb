@@ -10,16 +10,14 @@ class TodoItemsController < ApplicationController
   def create
     @todo_item = TodoItem.new(todoitem_params)
 
-    unless @todo_item.save
-      flash[:error] = "Error creating todo item"
-    end
+    flash[:error] = 'Error creating todo item' unless @todo_item.save
 
     redirect_to todo_list_path(@todo_item.todo_list)
   end
 
   def complete
     @todo_item.update!(completed: true)
-    
+
     respond_to do |format|
       format.html { redirect_to todo_list_path(@todo_item.todo_list) }
     end

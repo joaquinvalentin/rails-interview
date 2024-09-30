@@ -19,17 +19,16 @@ class TodoListsController < ApplicationController
 
   # GET /todolists/:id
   def show
-    respond_to :html 
+    respond_to :html
   end
 
   def create
     @todo_list = TodoList.create(todolist_params)
-    
+
     respond_to do |format|
       format.html { redirect_to todo_list_path(@todo_list), notice: 'Todo list was successfully created.' }
     end
   end
-
 
   def complete_all
     CompleteTodoListJob.perform_later(params[:id])
@@ -49,4 +48,3 @@ class TodoListsController < ApplicationController
     @todo_list = TodoList.find(params[:id])
   end
 end
-
